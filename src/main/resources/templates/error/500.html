@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main :: layout(~{::title}, ~{fragments/navbar :: public}, ~{::main})}">
+<head><title>500 · Error interno</title></head>
+<body>
+<main class="flex-grow-1">
+    <section th:replace="~{fragments/error :: card('500', 'Error interno del servidor', 'Algo salió mal de nuestro lado. Inténtalo de nuevo en unos minutos.')}"></section>
+</main>
+</body>
+</html>

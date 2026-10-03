@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main :: layout(~{::title}, ~{fragments/navbar :: user('dashboard')}, ~{::main})}">
+<head>
+    <title>Mi panel</title>
+</head>
+<body>
+<main class="flex-grow-1 container py-4">
+    <h1 class="h3 mb-4">Bienvenido a tu panel</h1>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100"><div class="card-body">
+                <h2 class="h5">Mi perfil</h2>
+                <p class="text-body-secondary mb-0">Aquí irán tus datos personales.</p>
+            </div></div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100"><div class="card-body">
+                <h2 class="h5">Mi actividad</h2>
+                <p class="text-body-secondary mb-0">Aquí verás tu actividad reciente.</p>
+            </div></div>
+        </div>
+    </div>
+    <p class="small text-body-secondary mt-4">Contenido de ejemplo. Esta vista será para el rol USER (y ADMIN).</p>
+</main>
+</body>
+</html>

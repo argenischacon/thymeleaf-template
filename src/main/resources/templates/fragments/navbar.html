@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!-- Navbar público (home y páginas de error: no depende de la sesión) -->
+<nav th:fragment="public" class="navbar bg-body border-bottom">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" th:href="@{/}">Plantilla</a>
+  </div>
+</nav>
+
+<!-- Navbar ADMIN -->
+<nav th:fragment="admin(active)" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" th:href="@{/admin/dashboard}">Administración</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#adminNav" aria-controls="adminNav"
+            aria-expanded="false" aria-label="Alternar menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="adminNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" th:classappend="${active == 'dashboard'} ? 'active'"
+             th:href="@{/admin/dashboard}">Dashboard</a>
+        </li>
+      </ul>
+      <span class="navbar-text">Rol: ADMIN</span>
+    </div>
+  </div>
+</nav>
+
+<!-- Navbar USER -->
+<nav th:fragment="user(active)" class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" th:href="@{/user/dashboard}">Mi cuenta</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#userNav" aria-controls="userNav"
+            aria-expanded="false" aria-label="Alternar menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="userNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" th:classappend="${active == 'dashboard'} ? 'active'"
+             th:href="@{/user/dashboard}">Dashboard</a>
+        </li>
+      </ul>
+      <span class="navbar-text">Rol: USER</span>
+    </div>
+  </div>
+</nav>
+
+</body>
+</html>

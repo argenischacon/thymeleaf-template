@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main :: layout(~{::title}, ~{fragments/navbar :: public}, ~{::main})}">
+<head><title>503 · Servicio no disponible</title></head>
+<body>
+<main class="flex-grow-1">
+    <section th:replace="~{fragments/error :: card('503', 'Servicio no disponible', 'Estamos en mantenimiento o con alta demanda. Vuelve pronto.')}"></section>
+</main>
+</body>
+</html>

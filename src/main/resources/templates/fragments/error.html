@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<section th:fragment="card(code, title, text)" class="container py-5 text-center">
+    <p class="display-1 fw-bold text-primary mb-0" th:text="${code}">404</p>
+    <h1 class="h3 mb-3" th:text="${title}">Título</h1>
+    <p class="text-body-secondary mb-2" th:text="${text}">Mensaje</p>
+    <!-- Detalle técnico: solo aparece si el servidor lo incluye (perfil dev) -->
+    <p class="small text-danger" th:if="${!#strings.isEmpty(message)}" th:text="${message}"></p>
+    <a class="btn btn-primary mt-3" th:href="@{/}">Volver al inicio</a>
+</section>
+</body>
+</html>

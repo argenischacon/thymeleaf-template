@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main :: layout(~{::title}, ~{fragments/navbar :: public}, ~{::main})}">
+<head>
+    <title>Inicio · Plantilla</title>
+</head>
+<body>
+<main class="flex-grow-1 container py-5">
+    <h1 class="mb-4">Plantilla Spring Boot + Thymeleaf</h1>
+    <p class="text-body-secondary">Accesos temporales por rol (se protegerán con Spring Security).</p>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <a class="btn btn-dark w-100 py-3" th:href="@{/admin/dashboard}">Dashboard Administrador</a>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-primary w-100 py-3" th:href="@{/user/dashboard}">Dashboard Usuario</a>
+        </div>
+    </div>
+</main>
+</body>
+</html>

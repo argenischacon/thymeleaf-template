@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main :: layout(~{::title}, ~{fragments/navbar :: public}, ~{::main})}">
+<head><title>Error en la solicitud</title></head>
+<body>
+<main class="flex-grow-1">
+    <section th:replace="~{fragments/error :: card(${status}, 'Error en la solicitud', 'No pudimos completar tu solicitud.')}"></section>
+</main>
+</body>
+</html>

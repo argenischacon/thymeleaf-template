@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main :: layout(~{::title}, ~{fragments/navbar :: public}, ~{::main})}">
+<head><title>405 · Método no permitido</title></head>
+<body>
+<main class="flex-grow-1">
+    <section th:replace="~{fragments/error :: card('405', 'Método no permitido', 'Esta acción no está permitida en esta dirección.')}"></section>
+</main>
+</body>
+</html>
