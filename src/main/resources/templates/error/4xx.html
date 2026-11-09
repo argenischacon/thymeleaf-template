@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org"
-      th:replace="~{layouts/main :: layout(~{::title}, ~{fragments/navbar :: public}, ~{::main})}">
-<head><title>Error en la solicitud</title></head>
-<body>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{fragments/head :: head('Error en la solicitud')}"/>
+</head>
+<body class="d-flex flex-column min-vh-100 bg-body-tertiary">
+<header th:replace="~{fragments/navbar :: public}"></header>
+
 <main class="flex-grow-1">
     <section th:replace="~{fragments/error :: card(${status}, 'Error en la solicitud', 'No pudimos completar tu solicitud.')}"></section>
 </main>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<th:block th:replace="~{fragments/scripts :: common}"/>
 </body>
 </html>
